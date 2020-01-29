@@ -1,20 +1,24 @@
 # -*- coding: utf-8 -*-
 from plone.app.registry.browser import controlpanel
-from product.analytics.interfaces import IAnalyticsSettings
 from product.analytics import _
+from product.analytics.interfaces import IAnalyticsSettings
 
 
 class AnalyticsControlPanelEditForm(controlpanel.RegistryEditForm):
-    
+    """ Analytics ControlPanel
+    """
+
     schema = IAnalyticsSettings
     schema_prefix = 'product.analytics'
 
-    label = _(u"Analytics Settings")
+    label = _('Analytics Settings')
     description = _(
-        u"Settings of the analytics. You need to add the following service account to your analytics: " +
-        u"semic-140@decisive-lambda-226112.iam.gserviceaccount.com"
+        'Settings of the analytics. You need to add the following service account ',
+        'to your analytics: semic-140@decisive-lambda-226112.iam.gserviceaccount.com',
     )
 
 
 class AnalyticsSettingsControlPanel(controlpanel.ControlPanelFormWrapper):
+    """ Analytics Settings ControlPanel
+    """
     form = AnalyticsControlPanelEditForm

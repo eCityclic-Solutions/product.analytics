@@ -1,8 +1,14 @@
 #!/bin/bash
+# i18ndude should be available in current $PATH (eg by running
+# ``export PATH=$PATH:$BUILDOUT_DIR/bin`` when i18ndude is located in your buildout's bin directory)
+#
+# For every language you want to translate into you need a
+# locales/[language]/LC_MESSAGES/analytics.po
+# (e.g. locales/de/LC_MESSAGES/analytics.po)
 
 domain=product.analytics
-bin_path=/opt/Plone-5.0/zeocluster/bin
-languages=("es" "ca")
+bin_path=/opt/Plone-5.2/zeocluster/bin
+languages=("ca" "en" "es")
 
 $bin_path/i18ndude rebuild-pot --pot $domain.pot --merge manual.pot --create $domain ../
 

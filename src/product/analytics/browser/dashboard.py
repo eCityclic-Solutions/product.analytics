@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-from Products.Five import BrowserView
 from plone import api
-from product.analytics.browser.utils import get_time_interval
 from product.analytics.browser.utils import get_access_token
 from product.analytics.browser.utils import get_ga_id
+from product.analytics.browser.utils import get_time_interval
+from Products.Five import BrowserView
 
 
 class DashBoardView(BrowserView):
-    """ DashBoardView 
+    """ DashBoardView
     """
 
     @property
@@ -25,34 +25,33 @@ class DashBoardView(BrowserView):
     def pagesTableTranslations(self):
         language = api.portal.get_current_language()
         if language == 'ca':
-            return '''*/
-                path: "Ruta", 
+            translations = """*/
+                path: "Ruta",
                 page: "Pàgina",
                 views: "Visites",
                 uniqueViews: "Visites úniques",
                 averageTime: "Temps promig",
                 entrances: "Entrades"
                 /*
-            '''
-        if language == 'es':
-            return '''*/
-                path: "Ruta", 
+            """
+        elif language == 'es':
+            translations = """*/
+                path: "Ruta",
                 page: "Página",
                 views: "Visitas",
                 uniqueViews: "Visitas únicas",
                 averageTime: "Tiempo promedio",
                 entrances: "Entradas"
                 /*
-            '''
-        return '''*/
-            path: "Path", 
-            page: "Page",
-            views: "Views",
-            uniqueViews: "Unique views",
-            averageTime: "Average time",
-            entrances: "Entrances"
-            /*
-        '''
-    
-    
-    
+            """
+        else:
+            translations = """*/
+                path: "Path",
+                page: "Page",
+                views: "Views",
+                uniqueViews: "Unique views",
+                averageTime: "Average time",
+                entrances: "Entrances"
+                /*
+            """
+        return translations

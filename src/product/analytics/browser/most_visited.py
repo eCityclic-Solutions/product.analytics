@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
-from Products.Five import BrowserView
-from product.analytics.browser.utils import get_views
 from plone import api
+from product.analytics.browser.utils import get_views
+from Products.Five import BrowserView
 
 
 class MostVisitedView(BrowserView):
-    """ MostVisitedView """
+    """ MostVisitedView
+    """
 
     def get_most_visited(self, number=10):
         portal_url = api.portal.get().absolute_url()
@@ -18,7 +19,7 @@ class MostVisitedView(BrowserView):
                 rows = map(lambda row: {
                     'title': row[0],
                     'url': portal_url + row[1],
-                    'views': row[2]
+                    'views': row[2],
                 }, rows[:number])
 
                 return rows

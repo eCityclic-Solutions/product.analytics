@@ -1,46 +1,35 @@
 # -*- coding: utf-8 -*-
-from zope.interface import implementer
-from zope.browsermenu.interfaces import IBrowserMenu
-from zope.browsermenu.interfaces import IBrowserSubMenuItem # noqa
-from plone.app.contentmenu.menu import BrowserMenu
-from plone.app.contentmenu.menu import BrowserSubMenuItem # noqa
 from plone import api
+from plone.app.contentmenu.menu import BrowserMenu
+from plone.app.contentmenu.menu import BrowserSubMenuItem
 from plone.memoize.instance import memoize
-from product.analytics.browser.utils import get_views
 from product.analytics import _
+from product.analytics.browser.utils import get_views
+from zope.browsermenu.interfaces import IBrowserMenu
+from zope.browsermenu.interfaces import IBrowserSubMenuItem
+from zope.interface import implementer
 
 
 @implementer(IBrowserMenu)
 class AnalyticsMenu(BrowserMenu):
-    """"""
+    """ Analytics Menu
+    """
+
     def getMenuItems(self, context, request):
         menu = [
             {
-                'title': _(u'Dashboard'),
-                'description': _(u'Dashboard'),
+                'title': _('Dashboard'),
+                'description': _('Dashboard'),
                 'action': context.absolute_url() + '/@@dashboard-analytics-view',
                 'selected': False,
                 'icons': None,
                 'extra': {
                     'id': 'dashboard-analytics-id',
                     'separator': None,
-                    'class': 'dashboard-analytics'
+                    'class': 'dashboard-analytics',
                 },
-                'submenu': None
+                'submenu': None,
             },
-            # {
-            #     'title': _(u'See more visited pages'),
-            #     'description': _(u'See more visited pages'),
-            #     'action': context.absolute_url() + '/@@most-visited-analytics-view',
-            #     'selected': False,
-            #     'icons': None,
-            #     'extra': {
-            #         'id': 'most-visited-analytics-id',
-            #         'separator': None,
-            #         'class': 'most-visited-analytics'
-            #     },
-            #     'submenu': None
-            # }
         ]
 
         return menu
@@ -48,11 +37,13 @@ class AnalyticsMenu(BrowserMenu):
 
 @implementer(IBrowserSubMenuItem)
 class AnalyticsSubMenuItem(BrowserSubMenuItem):
+    """ Analytics Submenu
+    """
 
     submenuId = 'menu_analytics'
     order = 100
 
-    views_msg = _(u'views')
+    views_msg = _('views')
 
     @property
     def extra(self):
@@ -74,13 +65,13 @@ class AnalyticsSubMenuItem(BrowserSubMenuItem):
             for row in rows:
                 if row[1] == context_path:
                     return 'Analytics: ' + row[2] + ' ' + api.portal.translate(
-                        self.views_msg, domain='products.analytics', 
+                        self.views_msg, domain='products.analytics',
                         lang=api.portal.get_current_language())
         return 'Analytics: No data'
 
     @property
     def description(self):
-        return _(u"Number of visits for the current page in last 30 days.")
+        return _('Number of visits for the current page in last 30 days.')
 
     @property
     def action(self):
