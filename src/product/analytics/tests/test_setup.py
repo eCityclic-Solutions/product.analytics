@@ -1,9 +1,16 @@
 # -*- coding: utf-8 -*-
-"""Setup tests for this package."""
 from plone import api
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
 from product.analytics.testing import PRODUCT_ANALYTICS_INTEGRATION_TESTING  # noqa
 
 import unittest
+
+
+try:
+    from Products.CMFPlone.utils import get_installer
+except ImportError:
+    get_installer = None
 
 
 class TestSetup(unittest.TestCase):
@@ -14,7 +21,10 @@ class TestSetup(unittest.TestCase):
     def setUp(self):
         """Custom shared utility setup for tests."""
         self.portal = self.layer['portal']
-        self.installer = api.portal.get_tool('portal_quickinstaller')
+        if get_installer:
+            self.installer = get_installer(self.portal, self.layer['request'])
+        else:
+            self.installer = api.portal.get_tool('portal_quickinstaller')
 
     def test_product_installed(self):
         """Test if product.analytics is installed."""
@@ -26,7 +36,10 @@ class TestSetup(unittest.TestCase):
         from product.analytics.interfaces import (
             IProductAnalyticsLayer)
         from plone.browserlayer import utils
-        self.assertIn(IProductAnalyticsLayer, utils.registered_layers())
+        self.assertIn(
+            IProductAnalyticsLayer,
+            utils.registered_layers(),
+        )
 
 
 class TestUninstall(unittest.TestCase):
@@ -35,8 +48,14 @@ class TestUninstall(unittest.TestCase):
 
     def setUp(self):
         self.portal = self.layer['portal']
-        self.installer = api.portal.get_tool('portal_quickinstaller')
+        if get_installer:
+            self.installer = get_installer(self.portal, self.layer['request'])
+        else:
+            self.installer = api.portal.get_tool('portal_quickinstaller')
+        roles_before = api.user.get_roles(TEST_USER_ID)
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
         self.installer.uninstallProducts(['product.analytics'])
+        setRoles(self.portal, TEST_USER_ID, roles_before)
 
     def test_product_uninstalled(self):
         """Test if product.analytics is cleanly uninstalled."""
@@ -48,4 +67,7 @@ class TestUninstall(unittest.TestCase):
         from product.analytics.interfaces import \
             IProductAnalyticsLayer
         from plone.browserlayer import utils
-        self.assertNotIn(IProductAnalyticsLayer, utils.registered_layers())
+        self.assertNotIn(
+            IProductAnalyticsLayer,
+            utils.registered_layers(),
+        )

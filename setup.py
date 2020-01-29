@@ -15,9 +15,9 @@ long_description = '\n\n'.join([
 setup(
     name='product.analytics',
     version='1.0a1',
-    description="An add-on for Plone",
+    description="Integration with Google Analytics",
     long_description=long_description,
-    # Get more from https://pypi.org/classifiers/
+    # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         "Environment :: Web Environment",
         "Framework :: Plone",
@@ -43,7 +43,6 @@ setup(
     package_dir={'': 'src'},
     include_package_data=True,
     zip_safe=False,
-    python_requires=">=3.6",
     install_requires=[
         'plone.api',
         'Products.GenericSetup>=1.8.2',
