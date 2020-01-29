@@ -16,99 +16,99 @@ msgstr ""
 
 #: ../vocabularies.py:11
 msgid "1 any"
-msgstr ""
+msgstr "1 any"
 
 #: ../vocabularies.py:9
 msgid "3 mesos"
-msgstr ""
+msgstr "3 mesos"
 
 #: ../vocabularies.py:8
 msgid "30 dies"
-msgstr ""
+msgstr "30 díes"
 
 #: ../vocabularies.py:10
 msgid "6 mesos"
-msgstr ""
+msgstr "6 mesos"
 
 #: ../browser/controlpanel.py:12
 #: ../profiles/default/controlpanel.xml
 msgid "Analytics Settings"
-msgstr ""
+msgstr "Configuración Analytics"
 
 #: ../browser/dashboard.pt:22
 #: ../browser/menu.py:19
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 #: ../configure.zcml:21
 msgid "Installs the product.analytics add-on."
-msgstr ""
+msgstr "Installs the product.analytics add-on."
 
 #: ../browser/configure.zcml:26
 msgid "Menu Analytics"
-msgstr ""
+msgstr "Menú Analytics"
 
 #: ../browser/most_visited.pt:11
 msgid "Most visited pages"
-msgstr ""
+msgstr "Páginas más visitadas"
 
 #: ../browser/most_visited.pt:29
 msgid "No data"
-msgstr ""
+msgstr "No data"
 
 #: ../browser/menu.py:83
 msgid "Number of visits for the current page in last 30 days."
-msgstr ""
+msgstr "Número de visites en esta página durante los últimos 30 días"
 
 #: ../browser/dashboard.pt:51
 msgid "Pagines"
-msgstr ""
+msgstr "Páginas"
 
 #: ../browser/dashboard.pt:45
 msgid "Paisos"
-msgstr ""
+msgstr "Países"
 
 #: ../browser/dashboard.pt:27
 msgid "Periode:"
-msgstr ""
+msgstr "Període:"
 
 #: ../browser/controlpanel.py:13
 msgid "Settings of the analytics. You need to add the following service account to your analytics: semic-140@decisive-lambda-226112.iam.gserviceaccount.com"
-msgstr ""
+msgstr "Configuración de l'analytics. Necesita añadir la siguiente cuenta de servici en su analytics: semic-140@decisive-lambda-226112.iam.gserviceaccount.com"
 
 #: ../interfaces.py:21
 msgid "Time interval"
-msgstr ""
+msgstr "Interval de tiempo"
 
 #: ../interfaces.py:22
 msgid "Time interval of data showed in analytics views"
-msgstr ""
+msgstr "Interval de tiempo de los datos que se recuperan del analytics"
 
 #: ../configure.zcml:30
 msgid "Uninstalls the product.analytics add-on."
-msgstr ""
+msgstr "Uninstalls the product.analytics add-on."
 
 #: ../interfaces.py:15
 msgid "View ID"
-msgstr ""
+msgstr "Vista ID"
 
 #: ../browser/dashboard.pt:41
 msgid "Visites"
-msgstr ""
+msgstr "Visitas"
 
 #: ../configure.zcml:21
 msgid "product.analytics"
-msgstr ""
+msgstr "product.analytics"
 
 #: ../configure.zcml:30
 msgid "product.analytics (uninstall)"
-msgstr ""
+msgstr "product.analytics (uninstall)"
 
 #: ../browser/dashboard.pt:28
 msgid "ultims"
-msgstr ""
+msgstr "últimos"
 
 #: ../browser/menu.py:55
 #: ../browser/most_visited.pt:25
 msgid "views"
-msgstr ""
+msgstr "visitas"

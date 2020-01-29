@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="product.analytics">
+<body>
+
+<metal:title fill-slot="content-title">
+
+    <h1 class="documentFirstHeading" i18n:translate="">
+      Most visited pages
+    </h1>
+
+</metal:title>
+
+<metal:content-core fill-slot="content-core">
+<metal:block define-macro="content-core">
+
+  <div id="most-visited-pages" tal:define="pages python:view.get_most_visited(number=50)">
+    <div tal:condition="pages">
+      <div class="page" tal:repeat="page pages">
+        <span> ${python:repeat['page'].index + 1} -</span>
+        <a href="${page/url}" title="${page/title}">${page/title}</a>
+        <span> - ${page/views} </span><span i18n:translate="">views</span>
+      </div>
+    </div>
+
+    <div tal:condition="not:pages" i18n:translate=""> No data </div>
+  </div>
+
+</metal:block>
+</metal:content-core>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="product.analytics">
+<body>
+
+<metal:style_head_slot metal:fill-slot="style_slot">
+    <style>
+      #pages-table-container table{
+        table-layout: fixed;
+        word-break: break-word;
+      }
+    </style>
+</metal:style_head_slot>
+
+
+
+<metal:title fill-slot="content-title">
+
+    <h1 class="documentFirstHeading" i18n:translate="">
+      Dashboard
+    </h1>
+
+    <h2>
+      <span i18n:translate="">Periode:</span>
+      <span i18n:translate="">ultims</span>
+      <span>${view/time_interval}</span>
+      <span>dies</span>
+    </h2>
+
+</metal:title>
+
+<metal:content-core fill-slot="content-core">
+<metal:block define-macro="content-core">
+
+
+  <div class="row py-4">
+    <div class="col-xs-12 col-md-6">
+      <h3 class="text-center pb-3" i18n:translate="">Visites</h3>
+      <div id="views-graphic-container"></div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <h3 class="text-center pb-3" i18n:translate="">Paisos</h3>
+      <div id="country-chart-container"></div>
+    </div>
+  </div>
+  <div class="row py-4">
+    <div class="col-xs-12">
+      <h3 class="text-center pb-3" i18n:translate="">Pagines</h3>
+      <div id="pages-table-container"></div>
+    </div>
+  </div>
+
+
+  <script>
+    (function(w,d,s,g,js,fs){
+      g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
+      js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
+      js.src='https://apis.google.com/js/platform.js';
+      fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
+    }(window,document,'script'));
+  </script>
+  <script>
+
+    gapi.analytics.ready(function() {
+
+      gapi.analytics.auth.authorize({
+        'serverAuth': {
+          'access_token': '${view/token}'
+        }
+      });
+
+      var viewsGraphic = new gapi.analytics.googleCharts.DataChart({
+        query: {
+          'ids': 'ga:${view/ga_id}',
+          'metrics': 'ga:pageviews',
+          'dimensions': 'ga:date',
+          'start-date': '${view/time_interval}daysAgo',
+          'end-date': 'today',
+        },
+        chart: {
+          'container': 'views-graphic-container',
+          'type': 'LINE',
+          'options': {
+            'width': '100%',
+          }
+        }
+      });
+      viewsGraphic.execute();
+
+      var countryChart = new gapi.analytics.googleCharts.DataChart({
+        query: {
+          'ids': 'ga:${view/ga_id}',
+          'metrics': 'ga:sessions',
+          'dimensions': 'ga:country',
+          'start-date': '${view/time_interval}daysAgo',
+          'end-date': 'today',
+          'max-results': 6,
+          'sort': '-ga:sessions'
+        },
+        chart: {
+          'container': 'country-chart-container',
+          'type': 'PIE',
+          'options': {
+            'width': '100%',
+            'pieHole': 4/9
+          }
+        }
+      });
+      countryChart.execute();
+
+      var pagesTableTranslations = {
+        /* ${view/pagesTableTranslations} */
+      };
+      var pagesTable = new gapi.analytics.googleCharts.DataChart({
+        query: {
+          'ids': 'ga:${view/ga_id}',
+          'metrics': 'ga:pageviews, ga:uniquePageviews, ga:avgTimeOnPage, ga:entrances',
+          'dimensions': 'ga:pagePath, ga:pageTitle',
+          'start-date': '${view/time_interval}daysAgo',
+          'end-date': 'today',
+          'start-index': 1,
+          'max-results': 50,
+          'sort': '-ga:pageviews'
+        },
+        chart: {
+          'container': 'pages-table-container',
+          'type': 'TABLE',
+          'options': {
+            'width': '100%',
+          }
+        }
+      });
+      pagesTable.on('success', function(response) {
+        $('.gapi-analytics-data-chart-styles-table-th').each(function(index){
+          if(index == 0 || index == 1)
+            $(this).css('width', '20%');
+          if(index == 0)
+            $(this).text(pagesTableTranslations.path);
+          if(index == 1)
+            $(this).text(pagesTableTranslations.page);
+          if(index == 2)
+            $(this).text(pagesTableTranslations.views);
+          if(index == 3)
+            $(this).text(pagesTableTranslations.uniqueViews);
+          if(index == 4)
+            $(this).text(pagesTableTranslations.averageTime);
+          if(index == 5)
+            $(this).text(pagesTableTranslations.entrances);
+        });
+      });
+      pagesTable.execute();
+
+
+    });
+  </script>
+
+</metal:block>
+</metal:content-core>
+</body>
+</html>

@@ -18,8 +18,6 @@ class ProductAnalyticsLayer(PloneSandboxLayer):
         # Load any other ZCML that is required for your tests.
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
-        import plone.restapi
-        self.loadZCML(package=plone.restapi)
         self.loadZCML(package=product.analytics)
 
     def setUpPloneSite(self, portal):
@@ -31,13 +29,13 @@ PRODUCT_ANALYTICS_FIXTURE = ProductAnalyticsLayer()
 
 PRODUCT_ANALYTICS_INTEGRATION_TESTING = IntegrationTesting(
     bases=(PRODUCT_ANALYTICS_FIXTURE,),
-    name='ProductAnalyticsLayer:IntegrationTesting',
+    name='ProductAnalyticsLayer:IntegrationTesting'
 )
 
 
 PRODUCT_ANALYTICS_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(PRODUCT_ANALYTICS_FIXTURE,),
-    name='ProductAnalyticsLayer:FunctionalTesting',
+    name='ProductAnalyticsLayer:FunctionalTesting'
 )
 
 
@@ -45,7 +43,7 @@ PRODUCT_ANALYTICS_ACCEPTANCE_TESTING = FunctionalTesting(
     bases=(
         PRODUCT_ANALYTICS_FIXTURE,
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
-        z2.ZSERVER_FIXTURE,
+        z2.ZSERVER_FIXTURE
     ),
-    name='ProductAnalyticsLayer:AcceptanceTesting',
+    name='ProductAnalyticsLayer:AcceptanceTesting'
 )

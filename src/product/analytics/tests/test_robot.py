@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from product.analytics.testing import PRODUCT_ANALYTICS_ACCEPTANCE_TESTING  # noqa: E501
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
+from product.analytics.testing import PRODUCT_ANALYTICS_ACCEPTANCE_TESTING  # noqa
 
 import os
 import robotsuite
@@ -22,7 +22,7 @@ def test_suite():
         suite.addTests([
             layered(
                 robottestsuite,
-                layer=PRODUCT_ANALYTICS_ACCEPTANCE_TESTING,
+                layer=PRODUCT_ANALYTICS_ACCEPTANCE_TESTING
             ),
         ])
     return suite

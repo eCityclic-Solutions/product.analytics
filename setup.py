@@ -32,7 +32,7 @@ setup(
     keywords='Python Plone',
     author='csanahuja',
     author_email='csanahuja10@gmail.com',
-    url='https://github.com/collective/product.analytics',
+    url='https://gitlab.com/csanahuja/product.analytics/',
     project_urls={
         # 'PyPI': 'https://pypi.python.org/pypi/product.analytics',
         # 'Documentation': 'https://product.analytics.readthedocs.io/en/latest/',
