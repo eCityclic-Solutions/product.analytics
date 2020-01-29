@@ -45,12 +45,20 @@ setup(
     zip_safe=False,
     python_requires=">=3.6",
     install_requires=[
+        'plone.api',
+        'Products.GenericSetup>=1.8.2',
         'setuptools',
-        # -*- Extra requirements: -*-
         'z3c.jbot',
-        'plone.api>=1.8.4',
-        'plone.restapi',
-        'plone.app.dexterity',
+        'google-api-python-client==1.7.11',
+        'uritemplate==3.0.1',
+        'google-auth-httplib2==0.0.3',
+        'httplib2==0.17.0',
+        'google-auth==1.11.0',
+        'rsa==4.0',
+        'pyasn1==0.4.8',
+        'pyasn1-modules==0.2.8',
+        'cachetools==4.0.0',
+        'oauth2client==4.1.3',
     ],
     extras_require={
         'test': [
