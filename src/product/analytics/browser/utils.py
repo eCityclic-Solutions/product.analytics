@@ -24,6 +24,8 @@ def _cached_views(method, ga_id, time_interval):
 def get_service():
     scopes = [SCOPE]
     file_path = os.path.abspath(KEY_FILEPATH)
+    if not os.path.exists(file_path):
+        return None
 
     credentials = ServiceAccountCredentials.from_json_keyfile_name(
         file_path, scopes=scopes)
@@ -60,6 +62,8 @@ def get_views():
 @ram.cache(_cached_views)
 def _get_views(ga_id, time_interval):
     service = get_service()
+    if not service:
+        return None
     json_structure = get_analytics_query(service, ga_id, time_interval)
     return json_structure
 
