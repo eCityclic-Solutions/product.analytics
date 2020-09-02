@@ -31,6 +31,8 @@
     </h2>
 
 </metal:title>
+<metal:desc fill-slot="content-descripction">
+</metal:desc>
 
 <metal:content-core fill-slot="content-core">
 <metal:block define-macro="content-core">

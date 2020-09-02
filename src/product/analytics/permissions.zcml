@@ -1,11 +1,15 @@
 <configure
   xmlns="http://namespaces.zope.org/zope"
   xmlns:zcml="http://namespaces.zope.org/zcml"
-  i18n_domain="plone">
+  i18n_domain="product.analytics">
 
-  <configure zcml:condition="installed AccessControl.security">
-  <!-- -*- extra stuff goes here -*- -->
-
+    <configure zcml:condition="installed AccessControl.security">
+    <!-- -*- extra stuff goes here -*- -->
+    
+    <permission
+      id="product.analitycs.viewAnalytics"
+      title="product.analitycs: View Analytics"
+      />
 
   </configure>
 

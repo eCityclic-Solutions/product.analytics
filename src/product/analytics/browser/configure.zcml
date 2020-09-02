@@ -44,7 +44,7 @@
     for="*"
     class=".dashboard.DashBoardView"
     template="dashboard.pt"
-    permission="cmf.ManagePortal"
+    permission="product.analitycs.viewAnalytics"
     layer="product.analytics.interfaces.IProductAnalyticsLayer"
     />
 
@@ -54,7 +54,7 @@
     for="*"
     class=".most_visited.MostVisitedView"
     template="most_visited.pt"
-    permission="cmf.ManagePortal"
+    permission="product.analitycs.viewAnalytics"
     layer="product.analytics.interfaces.IProductAnalyticsLayer"
     />
 
