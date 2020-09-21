@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-07-08 13:24+0000\n"
+"POT-Creation-Date: 2020-09-21 08:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,21 +30,21 @@ msgstr ""
 msgid "6 mesos"
 msgstr ""
 
-#: ../browser/controlpanel.py:12
+#: ../browser/controlpanel.py:14
 #: ../profiles/default/controlpanel.xml
 msgid "Analytics Settings"
 msgstr ""
 
 #: ../browser/dashboard.pt:22
-#: ../browser/menu.py:19
+#: ../browser/menu.py:21
 msgid "Dashboard"
 msgstr ""
 
-#: ../configure.zcml:21
+#: ../configure.zcml:22
 msgid "Installs the product.analytics add-on."
 msgstr ""
 
-#: ../browser/configure.zcml:26
+#: ../browser/configure.zcml:27
 msgid "Menu Analytics"
 msgstr ""
 
@@ -60,47 +60,47 @@ msgstr ""
 msgid "Number of visits for the current page in last 30 days."
 msgstr ""
 
-#: ../browser/dashboard.pt:51
+#: ../browser/dashboard.pt:53
 msgid "Pagines"
-msgstr ""
-
-#: ../browser/dashboard.pt:45
-msgid "Paisos"
 msgstr ""
 
 #: ../browser/dashboard.pt:27
 msgid "Periode:"
 msgstr ""
 
-#: ../browser/controlpanel.py:13
+#: ../browser/dashboard.pt:47
+msgid "Procedència de les visites"
+msgstr ""
+
+#: ../browser/controlpanel.py:15
 msgid "Settings of the analytics. You need to add the following service account to your analytics: semic-140@decisive-lambda-226112.iam.gserviceaccount.com"
 msgstr ""
 
-#: ../interfaces.py:21
+#: ../interfaces.py:24
 msgid "Time interval"
 msgstr ""
 
-#: ../interfaces.py:22
+#: ../interfaces.py:25
 msgid "Time interval of data showed in analytics views"
 msgstr ""
 
-#: ../configure.zcml:30
+#: ../configure.zcml:31
 msgid "Uninstalls the product.analytics add-on."
 msgstr ""
 
-#: ../interfaces.py:15
+#: ../interfaces.py:18
 msgid "View ID"
 msgstr ""
 
-#: ../browser/dashboard.pt:41
+#: ../browser/dashboard.pt:43
 msgid "Visites"
 msgstr ""
 
-#: ../configure.zcml:21
+#: ../configure.zcml:22
 msgid "product.analytics"
 msgstr ""
 
-#: ../configure.zcml:30
+#: ../configure.zcml:31
 msgid "product.analytics (uninstall)"
 msgstr ""
 
@@ -108,7 +108,7 @@ msgstr ""
 msgid "ultims"
 msgstr ""
 
-#: ../browser/menu.py:55
+#: ../browser/menu.py:46
 #: ../browser/most_visited.pt:25
 msgid "views"
 msgstr ""

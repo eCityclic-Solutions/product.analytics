@@ -1,0 +1,114 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-21 08:55+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ../vocabularies.py:11
+msgid "1 any"
+msgstr ""
+
+#: ../vocabularies.py:9
+msgid "3 mesos"
+msgstr ""
+
+#: ../vocabularies.py:8
+msgid "30 dies"
+msgstr ""
+
+#: ../vocabularies.py:10
+msgid "6 mesos"
+msgstr ""
+
+#: ../browser/controlpanel.py:14
+#: ../profiles/default/controlpanel.xml
+msgid "Analytics Settings"
+msgstr ""
+
+#: ../browser/dashboard.pt:22
+#: ../browser/menu.py:21
+msgid "Dashboard"
+msgstr ""
+
+#: ../configure.zcml:22
+msgid "Installs the product.analytics add-on."
+msgstr ""
+
+#: ../browser/configure.zcml:27
+msgid "Menu Analytics"
+msgstr ""
+
+#: ../browser/most_visited.pt:11
+msgid "Most visited pages"
+msgstr ""
+
+#: ../browser/most_visited.pt:29
+msgid "No data"
+msgstr ""
+
+#: ../browser/menu.py:83
+msgid "Number of visits for the current page in last 30 days."
+msgstr ""
+
+#: ../browser/dashboard.pt:53
+msgid "Pagines"
+msgstr ""
+
+#: ../browser/dashboard.pt:27
+msgid "Periode:"
+msgstr ""
+
+#: ../browser/dashboard.pt:47
+msgid "Procedència de les visites"
+msgstr ""
+
+#: ../browser/controlpanel.py:15
+msgid "Settings of the analytics. You need to add the following service account to your analytics: semic-140@decisive-lambda-226112.iam.gserviceaccount.com"
+msgstr ""
+
+#: ../interfaces.py:24
+msgid "Time interval"
+msgstr ""
+
+#: ../interfaces.py:25
+msgid "Time interval of data showed in analytics views"
+msgstr ""
+
+#: ../configure.zcml:31
+msgid "Uninstalls the product.analytics add-on."
+msgstr ""
+
+#: ../interfaces.py:18
+msgid "View ID"
+msgstr ""
+
+#: ../browser/dashboard.pt:43
+msgid "Visites"
+msgstr ""
+
+#: ../configure.zcml:22
+msgid "product.analytics"
+msgstr ""
+
+#: ../configure.zcml:31
+msgid "product.analytics (uninstall)"
+msgstr ""
+
+#: ../browser/dashboard.pt:28
+msgid "ultims"
+msgstr ""
+
+#: ../browser/menu.py:46
+#: ../browser/most_visited.pt:25
+msgid "views"
+msgstr ""

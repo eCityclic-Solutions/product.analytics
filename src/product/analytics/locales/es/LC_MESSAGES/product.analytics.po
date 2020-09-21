@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-07-08 13:24+0000\n"
+"POT-Creation-Date: 2020-09-21 08:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,21 +30,21 @@ msgstr "30 díes"
 msgid "6 mesos"
 msgstr "6 mesos"
 
-#: ../browser/controlpanel.py:12
+#: ../browser/controlpanel.py:14
 #: ../profiles/default/controlpanel.xml
 msgid "Analytics Settings"
 msgstr "Configuración Analytics"
 
 #: ../browser/dashboard.pt:22
-#: ../browser/menu.py:19
+#: ../browser/menu.py:21
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: ../configure.zcml:21
+#: ../configure.zcml:22
 msgid "Installs the product.analytics add-on."
 msgstr "Installs the product.analytics add-on."
 
-#: ../browser/configure.zcml:26
+#: ../browser/configure.zcml:27
 msgid "Menu Analytics"
 msgstr "Menú Analytics"
 
@@ -60,47 +60,47 @@ msgstr "No data"
 msgid "Number of visits for the current page in last 30 days."
 msgstr "Número de visites en esta página durante los últimos 30 días"
 
-#: ../browser/dashboard.pt:51
+#: ../browser/dashboard.pt:53
 msgid "Pagines"
 msgstr "Páginas"
-
-#: ../browser/dashboard.pt:45
-msgid "Paisos"
-msgstr "Países"
 
 #: ../browser/dashboard.pt:27
 msgid "Periode:"
 msgstr "Període:"
 
-#: ../browser/controlpanel.py:13
+#: ../browser/dashboard.pt:47
+msgid "Procedència de les visites"
+msgstr "Procedencia de las visitas"
+
+#: ../browser/controlpanel.py:15
 msgid "Settings of the analytics. You need to add the following service account to your analytics: semic-140@decisive-lambda-226112.iam.gserviceaccount.com"
 msgstr "Configuración de l'analytics. Necesita añadir la siguiente cuenta de servici en su analytics: semic-140@decisive-lambda-226112.iam.gserviceaccount.com"
 
-#: ../interfaces.py:21
+#: ../interfaces.py:24
 msgid "Time interval"
 msgstr "Interval de tiempo"
 
-#: ../interfaces.py:22
+#: ../interfaces.py:25
 msgid "Time interval of data showed in analytics views"
 msgstr "Interval de tiempo de los datos que se recuperan del analytics"
 
-#: ../configure.zcml:30
+#: ../configure.zcml:31
 msgid "Uninstalls the product.analytics add-on."
 msgstr "Uninstalls the product.analytics add-on."
 
-#: ../interfaces.py:15
+#: ../interfaces.py:18
 msgid "View ID"
 msgstr "Vista ID"
 
-#: ../browser/dashboard.pt:41
+#: ../browser/dashboard.pt:43
 msgid "Visites"
 msgstr "Visitas"
 
-#: ../configure.zcml:21
+#: ../configure.zcml:22
 msgid "product.analytics"
 msgstr "product.analytics"
 
-#: ../configure.zcml:30
+#: ../configure.zcml:31
 msgid "product.analytics (uninstall)"
 msgstr "product.analytics (uninstall)"
 
@@ -108,7 +108,7 @@ msgstr "product.analytics (uninstall)"
 msgid "ultims"
 msgstr "últimos"
 
-#: ../browser/menu.py:55
+#: ../browser/menu.py:46
 #: ../browser/most_visited.pt:25
 msgid "views"
 msgstr "visitas"
