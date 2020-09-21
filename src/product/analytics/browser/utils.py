@@ -45,6 +45,7 @@ def get_analytics_query(service, ga_id, time_interval):
             'start_date': str(time_interval) + 'daysAgo',
             'end_date': 'today',
             'sort': '-ga:pageviews',
+            'max_results': 10000,
         })
         return data_query.execute()
     except HttpError:

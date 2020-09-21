@@ -124,7 +124,7 @@
           'start-date': '${view/time_interval}daysAgo',
           'end-date': 'today',
           'start-index': 1,
-          'max-results': 50,
+          'max-results': 500,
           'sort': '-ga:pageviews'
         },
         chart: {

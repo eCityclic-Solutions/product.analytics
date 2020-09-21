@@ -54,6 +54,15 @@ class AnalyticsSubMenuItem(BrowserSubMenuItem):
     def title(self):
         portal_path = '/'.join(api.portal.get().getPhysicalPath())
         context_path = '/'.join(self.context.getPhysicalPath())
+
+        parent = self.context.aq_parent
+        try:
+            default_page = parent.default_page
+            if default_page == self.context.id:
+                context_path = '/'.join(parent.getPhysicalPath())
+        except AttributeError:
+            pass
+
         context_path = context_path.replace(portal_path, '')
 
         if not context_path:

@@ -7,8 +7,8 @@
     <!-- -*- extra stuff goes here -*- -->
     
     <permission
-      id="product.analitycs.viewAnalytics"
-      title="product.analitycs: View Analytics"
+      id="product.analytics.viewAnalytics"
+      title="product.analytics: View Analytics"
       />
 
   </configure>
