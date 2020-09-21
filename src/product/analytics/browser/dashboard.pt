@@ -31,13 +31,19 @@
     </h2>
 
 </metal:title>
-<metal:desc fill-slot="content-descripction">
+<metal:desc fill-slot="content-description">
 </metal:desc>
 
 <metal:content-core fill-slot="content-core">
 <metal:block define-macro="content-core">
 
+  <tal:not-token tal:condition="not:view/token">
+  <div class="alert alert-warning" i18n:translate="">
+    El fitxer json d'accés a l'Analytics no es troba a la ruta
+  </div>
+  </tal:not-token>
 
+  <tal:token tal:condition="view/token">
   <div class="row py-4">
     <div class="col-xs-12 col-md-6">
       <h3 class="text-center pb-3" i18n:translate="">Visites</h3>
@@ -158,6 +164,7 @@
 
     });
   </script>
+  </tal:token>
 
 </metal:block>
 </metal:content-core>
