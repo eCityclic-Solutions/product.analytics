@@ -74,6 +74,7 @@ def get_access_token():
         file_path = os.path.abspath(KEY_FILEPATH)
         file = ServiceAccountCredentials.from_json_keyfile_name(file_path, SCOPE)
         token = file.get_access_token().access_token
+        return token
     except FileNotFoundError:
         return None
 
