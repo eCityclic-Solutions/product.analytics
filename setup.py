@@ -54,6 +54,7 @@ setup(
         'google-auth==1.27.0',
         'google-auth-httplib2==0.0.4',
         'googleapis-common-protos==1.53.0',
+        'oauth2client==4.1.3',
         'pyasn1==0.4.8',
         'pyasn1-modules==0.2.8',
         'protobuf==3.15.4',
