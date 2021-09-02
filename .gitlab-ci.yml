@@ -29,20 +29,20 @@ stages:
 before_script:
   - echo "deb http://ftp.de.debian.org/debian/ stretch main contrib non-free" >> /etc/apt/sources.list
   - apt-get update
-  - apt-get install -y firefoxdriver
+  # - apt-get install -y firefoxdriver
   # - apt-get install -y xvfb
-  - apt-get install -y locales locales-all
+  # - apt-get install -y locales locales-all
   - python -V # Print out python version for debugging
   - pip install virtualenv
-  - mkdir webdriver;
-  - wget https://github.com/mozilla/geckodriver/releases/download/v0.20.0/geckodriver-v0.20.0-linux64.tar.gz;
-  - tar -xzf geckodriver-v0.20.0-linux64.tar.gz -C webdriver;
-  - wget https://chromedriver.storage.googleapis.com/2.40/chromedriver_linux64.zip;
-  - unzip chromedriver_linux64.zip -d webdriver;
-  - export PATH=$PATH:$(pwd)/webdriver;
-  - export LC_CTYPE=en_US.UTF-8
-  - export LC_ALL=en_US.UTF-8
-  - export LANG=en_US.UTF-8
+  # - mkdir webdriver;
+  # - wget https://github.com/mozilla/geckodriver/releases/download/v0.20.0/geckodriver-v0.20.0-linux64.tar.gz;
+  # - tar -xzf geckodriver-v0.20.0-linux64.tar.gz -C webdriver;
+  # - wget https://chromedriver.storage.googleapis.com/2.40/chromedriver_linux64.zip;
+  # - unzip chromedriver_linux64.zip -d webdriver;
+  # - export PATH=$PATH:$(pwd)/webdriver;
+  # - export LC_CTYPE=en_US.UTF-8
+  # - export LC_ALL=en_US.UTF-8
+  # - export LANG=en_US.UTF-8
   - virtualenv --clear -p python3.7 venv
   - source venv/bin/activate
   - pip install -r requirements.txt
