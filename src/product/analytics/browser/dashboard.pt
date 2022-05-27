@@ -18,7 +18,8 @@
     </style>
 </metal:style_head_slot>
 
-
+<metal:portlet-left metal:fill-slot="column_one_slot"></metal:portlet-left>
+<metal:portlet-right metal:fill-slot="column_two_slot"></metal:portlet-right>
 
 <metal:title fill-slot="content-title">
 
