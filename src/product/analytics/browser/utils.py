@@ -32,7 +32,10 @@ def get_service():
 
     http = httplib2.Http()
     http = credentials.authorize(http)
-    service = build('analytics', 'v3', http=http, cache_discovery=False)
+    try:
+        service = build('analytics', 'v3', http=http, cache_discovery=False)
+    except Exception:
+        service = None
     return service
 
 
