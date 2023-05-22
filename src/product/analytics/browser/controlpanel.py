@@ -16,7 +16,7 @@ class AnalyticsControlPanelEditForm(controlpanel.RegistryEditForm):
         'Settings of the analytics. You need to add the following '
         'service account: '
         'ecityclic-analytics@analytics-386813.iam.gserviceaccount.com '
-        'to your property with Reader role' # noqa: C812
+        'to your property with Reader role'  # noqa: C812
     )
 
 

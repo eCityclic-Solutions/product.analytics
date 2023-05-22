@@ -42,7 +42,7 @@ def get_analytics_query(analytics, property_id, time_interval):
     try:
         property_id = f'properties/{property_id}'
         request = {
-            'requests':[{
+            'requests': [{
                 'dateRanges': [{
                     'startDate': f'{str(time_interval)}daysAgo',
                     'endDate': 'today',
@@ -50,7 +50,7 @@ def get_analytics_query(analytics, property_id, time_interval):
                 'dimensions': [{'name': 'pageTitle'}, {'name': 'pagePath'}],
                 'metrics': [{'name': 'screenPageViews'}],
                 'limit': 10000,
-            }]
+            }],
         }
 
         data_query = analytics.properties().batchRunReports(

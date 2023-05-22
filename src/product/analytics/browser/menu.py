@@ -84,7 +84,7 @@ class AnalyticsSubMenuItem(BrowserSubMenuItem):
         views = get_views()
         if not views:
             return None
-        
+
         reports = views.get('reports', [])
         if not reports:
             return 'Analytics: No data'

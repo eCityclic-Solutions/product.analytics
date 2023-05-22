@@ -23,7 +23,7 @@ class MostVisitedView(BrowserView):
 
         if not views:
             return None
-        
+
         reports = views.get('reports', [])
         if not reports:
             return None
