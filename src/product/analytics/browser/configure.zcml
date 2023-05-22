@@ -4,59 +4,59 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="product.analytics">
 
-  <include package="product.analytics" file="permissions.zcml"/>
-  <include package="z3c.jbot" file="meta.zcml" />
+    <include package="product.analytics" file="permissions.zcml"/>
+    <include package="z3c.jbot" file="meta.zcml" />
 
-  <browser:jbot
-      directory="overrides"
-      layer="product.analytics.interfaces.IProductAnalyticsLayer"
-      />
+    <browser:jbot
+        directory="overrides"
+        layer="product.analytics.interfaces.IProductAnalyticsLayer"
+        />
 
-  <!-- Publish static files -->
-  <plone:static
-      name="product.analytics"
-      type="plone"
-      directory="static"
-      />
+    <!-- Publish static files -->
+    <plone:static
+        name="product.analytics"
+        type="plone"
+        directory="static"
+        />
 
-  <!-- Menu analytics -->
-  <browser:menu
-    id="menu_analytics"
-    title="Menu Analytics"
-    class=".menu.AnalyticsMenu"
-    />
-  <adapter for="* product.analytics.interfaces.IProductAnalyticsLayer"
-           name="menu.analytics"
-           factory=".menu.AnalyticsSubMenuItem"
-           provides="plone.app.contentmenu.interfaces.IContentMenuItem" />
+    <!-- Menu analytics -->
+    <browser:menu
+        id="menu_analytics"
+        title="Menu Analytics"
+        class=".menu.AnalyticsMenu"
+        />
+    <adapter for="* product.analytics.interfaces.IProductAnalyticsLayer"
+            name="menu.analytics"
+            factory=".menu.AnalyticsSubMenuItem"
+            provides="plone.app.contentmenu.interfaces.IContentMenuItem" />
 
-  <!-- Control Panel -->
-  <browser:page
-    name="analytics-settings"
-    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-    class=".controlpanel.AnalyticsSettingsControlPanel"
-    permission="cmf.ManagePortal"
-    layer="product.analytics.interfaces.IProductAnalyticsLayer"
-    />
+    <!-- Control Panel -->
+    <browser:page
+        name="analytics-settings"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".controlpanel.AnalyticsSettingsControlPanel"
+        permission="cmf.ManagePortal"
+        layer="product.analytics.interfaces.IProductAnalyticsLayer"
+        />
 
-  <!-- Dashboard -->
-  <browser:page
-    name="dashboard-analytics-view"
-    for="*"
-    class=".dashboard.DashBoardView"
-    template="dashboard.pt"
-    permission="product.analytics.viewAnalytics"
-    layer="product.analytics.interfaces.IProductAnalyticsLayer"
-    />
+    <!-- Dashboard -->
+    <browser:page
+        for="*"
+        name="dashboard-analytics-view"
+        class=".dashboard.DashBoardView"
+        template="dashboard.pt"
+        permission="product.analytics.viewAnalytics"
+        layer="product.analytics.interfaces.IProductAnalyticsLayer"
+        />
 
-  <!-- Most Visited -->
-  <browser:page
-    name="most-visited-analytics-view"
-    for="*"
-    class=".most_visited.MostVisitedView"
-    template="most_visited.pt"
-    permission="product.analytics.viewAnalytics"
-    layer="product.analytics.interfaces.IProductAnalyticsLayer"
-    />
+    <!-- Most Visited -->
+    <browser:page
+        for="*"
+        name="most-visited-analytics-view"
+        class=".most_visited.MostVisitedView"
+        template="most_visited.pt"
+        permission="product.analytics.viewAnalytics"
+        layer="product.analytics.interfaces.IProductAnalyticsLayer"
+        />
 
 </configure>

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-09-21 08:55+0000\n"
+"POT-Creation-Date: 2023-05-19 14:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,10 +35,17 @@ msgstr "6 mesos"
 msgid "Analytics Settings"
 msgstr "Configuració Analytics"
 
-#: ../browser/dashboard.pt:22
-#: ../browser/menu.py:21
+#: ../browser/dashboard.pt:26
 msgid "Dashboard"
 msgstr "Dashboard"
+
+#: ../browser/dashboard.pt:45
+msgid "El fitxer json d'accés a l'Analytics no es troba a la ruta"
+msgstr "El fitxer json d'accés a l'Analytics no es troba a la ruta"
+
+#: ../browser/most_visited.pt:28
+msgid "If you want to see the global data visit"
+msgstr "Si voleu veure les dades globals visiteu"
 
 #: ../configure.zcml:22
 msgid "Installs the product.analytics add-on."
@@ -48,33 +55,45 @@ msgstr "Installs the product.analytics add-on."
 msgid "Menu Analytics"
 msgstr "Menú Analytics"
 
-#: ../browser/most_visited.pt:11
+#: ../browser/menu.py:34
+msgid "Most visited"
+msgstr "Més visitats"
+
+#: ../browser/most_visited.pt:15
 msgid "Most visited pages"
 msgstr "Pàgines més visitades"
 
-#: ../browser/most_visited.pt:29
+#: ../browser/most_visited.pt:18
+msgid "Most visited pages in"
+msgstr "Pàgines més visites a"
+
+#: ../browser/most_visited.pt:46
 msgid "No data"
 msgstr "No data"
 
-#: ../browser/menu.py:83
+#: ../browser/menu.py:104
 msgid "Number of visits for the current page in last 30 days."
 msgstr "Nombre de visites en aquesta pàgina durant els últims 30 dies"
 
-#: ../browser/dashboard.pt:53
+#: ../browser/dashboard.pt:63
 msgid "Pagines"
 msgstr "Pàgines"
 
-#: ../browser/dashboard.pt:27
+#: ../browser/dashboard.pt:31
 msgid "Periode:"
 msgstr "Període:"
 
-#: ../browser/dashboard.pt:47
+#: ../browser/dashboard.pt:57
 msgid "Procedència de les visites"
 msgstr "Procedència de les visites"
 
+#: ../interfaces.py:18
+msgid "Property ID"
+msgstr "ID Propietat"
+
 #: ../browser/controlpanel.py:15
-msgid "Settings of the analytics. You need to add the following service account to your analytics: semic-140@decisive-lambda-226112.iam.gserviceaccount.com"
-msgstr "Configuració de l'analytics. Necessiteu afegir el següent compte de servei al vostre analytics: semic-140@decisive-lambda-226112.iam.gserviceaccount.com"
+msgid "Settings of the analytics. You need to add the following service account: ecityclic-analytics@analytics-386813.iam.gserviceaccount.com to your property with Reader role"
+msgstr "Configuració analytics. Afegiu el compte de servei: ecityclic-analytics@analytics-386813.iam.gserviceaccount.com a la vostra propietat amb el rol de Lector"
 
 #: ../interfaces.py:24
 msgid "Time interval"
@@ -88,13 +107,13 @@ msgstr "Interval de temps de les dades que es recuperen de l'analytics"
 msgid "Uninstalls the product.analytics add-on."
 msgstr "Uninstalls the product.analytics add-on."
 
-#: ../interfaces.py:18
-msgid "View ID"
-msgstr "Vista ID"
-
-#: ../browser/dashboard.pt:43
+#: ../browser/dashboard.pt:53
 msgid "Visites"
 msgstr "Visites"
+
+#: ../browser/most_visited.pt:27
+msgid "You are seeing most visited pages in section"
+msgstr "Esteu veient les pàgines més visitades a la secció"
 
 #: ../configure.zcml:22
 msgid "product.analytics"
@@ -104,11 +123,11 @@ msgstr "product.analytics"
 msgid "product.analytics (uninstall)"
 msgstr "product.analytics (uninstall)"
 
-#: ../browser/dashboard.pt:28
+#: ../browser/dashboard.pt:32
 msgid "ultims"
 msgstr "últims"
 
-#: ../browser/menu.py:46
-#: ../browser/most_visited.pt:25
+#: ../browser/menu.py:59
+#: ../browser/most_visited.pt:42
 msgid "views"
 msgstr "visites"

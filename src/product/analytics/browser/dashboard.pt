@@ -86,7 +86,7 @@
 
       var viewsGraphic = new gapi.analytics.googleCharts.DataChart({
         query: {
-          'ids': 'ga:${view/ga_id}',
+          'ids': 'ga:${view/property_id}',
           'metrics': 'ga:pageviews',
           'dimensions': 'ga:date',
           'start-date': '${view/time_interval}daysAgo',
@@ -104,7 +104,7 @@
 
       var procedenceChart = new gapi.analytics.googleCharts.DataChart({
         query: {
-          'ids': 'ga:${view/ga_id}',
+          'ids': 'ga:${view/property_id}',
           'metrics': 'ga:sessions',
           'dimensions': 'ga:source',
           'start-date': '${view/time_interval}daysAgo',
@@ -128,7 +128,7 @@
       };
       var pagesTable = new gapi.analytics.googleCharts.DataChart({
         query: {
-          'ids': 'ga:${view/ga_id}',
+          'ids': 'ga:${view/property_id}',
           'metrics': 'ga:pageviews, ga:uniquePageviews, ga:avgTimeOnPage, ga:entrances',
           'dimensions': 'ga:pagePath, ga:pageTitle',
           'start-date': '${view/time_interval}daysAgo',

@@ -17,16 +17,29 @@ class AnalyticsMenu(BrowserMenu):
 
     def getMenuItems(self, context, request):
         menu = [
+            # {
+            #     'title': _('Dashboard'),
+            #     'description': _('Dashboard'),
+            #     'action': context.absolute_url() + '/@@dashboard-analytics-view',
+            #     'selected': False,
+            #     'icons': None,
+            #     'extra': {
+            #         'id': 'dashboard-analytics-id',
+            #         'separator': None,
+            #         'class': 'dashboard-analytics',
+            #     },
+            #     'submenu': None,
+            # },
             {
-                'title': _('Dashboard'),
-                'description': _('Dashboard'),
-                'action': context.absolute_url() + '/@@dashboard-analytics-view',
+                'title': _('Most visited'),
+                'description': _('Most visited'),
+                'action': context.absolute_url() + '/@@most-visited-analytics-view',
                 'selected': False,
                 'icons': None,
                 'extra': {
-                    'id': 'dashboard-analytics-id',
+                    'id': 'most-visited-analytics-id',
                     'separator': None,
-                    'class': 'dashboard-analytics',
+                    'class': 'most-visited-analytics',
                 },
                 'submenu': None,
             },
@@ -69,13 +82,21 @@ class AnalyticsSubMenuItem(BrowserSubMenuItem):
             context_path = '/'
 
         views = get_views()
-        if views:
-            rows = views.get('rows', [])
-            for row in rows:
-                if row[1] == context_path:
-                    return 'Analytics: ' + row[2] + ' ' + api.portal.translate(
-                        self.views_msg, domain='products.analytics',
-                        lang=api.portal.get_current_language())
+        if not views:
+            return None
+        
+        reports = views.get('reports', [])
+        if not reports:
+            return 'Analytics: No data'
+
+        rows = reports[0].get('rows', [])
+        if not rows:
+            return 'Analytics: No data'
+
+        for row in rows:
+            if row['dimensionValues'][1]['value'] == context_path:
+                views_msg = api.portal.translate(self.views_msg, domain='products.analytics', lang=api.portal.get_current_language())
+                return 'Analytics: ' + row['metricValues'][0]['value'] + ' ' + views_msg
         return 'Analytics: No data'
 
     @property

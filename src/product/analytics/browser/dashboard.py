@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from plone import api
 from product.analytics.browser.utils import get_access_token
-from product.analytics.browser.utils import get_ga_id
+from product.analytics.browser.utils import get_property_id
 from product.analytics.browser.utils import get_time_interval
 from Products.Five import BrowserView
 
@@ -15,8 +15,8 @@ class DashBoardView(BrowserView):
         return get_access_token()
 
     @property
-    def ga_id(self):
-        return get_ga_id()
+    def property_id(self):
+        return get_property_id()
 
     @property
     def time_interval(self):

@@ -8,19 +8,35 @@ class MostVisitedView(BrowserView):
     """ MostVisitedView
     """
 
-    def get_most_visited(self, number=10):
+    def __call__(self):
+        self.portal = api.portal.get()
+        self.portal_url = self.portal.absolute_url()
+        self.portal_path = '/'.join(self.portal.getPhysicalPath())
+        self.section_path = '/'.join(self.context.getPhysicalPath()).replace(self.portal_path, '')
+
+        self.most_visited = self.get_most_visited()
+        return super().__call__()
+
+    def get_most_visited(self, number=50):
         portal_url = api.portal.get().absolute_url()
         views = get_views()
 
-        if views:
-            rows = views.get('rows', [])
-            if rows:
-                rows = sorted(rows, key=lambda row: int(row[2]))[::-1]
-                rows = map(lambda row: {
-                    'title': row[0],
-                    'url': portal_url + row[1],
-                    'views': row[2],
-                }, rows[:number])
+        if not views:
+            return None
+        
+        reports = views.get('reports', [])
+        if not reports:
+            return None
 
-                return rows
-        return None
+        rows = reports[0].get('rows', [])
+        if not rows:
+            return None
+
+        rows = list(filter(lambda row: self.section_path in row['dimensionValues'][1]['value'], rows))
+        rows = map(lambda row: {
+            'title': row['dimensionValues'][0]['value'],
+            'url': portal_url + row['dimensionValues'][1]['value'],
+            'views': row['metricValues'][0]['value'],
+        }, rows[:number])
+
+        return rows

@@ -6,18 +6,35 @@
       i18n:domain="product.analytics">
 <body>
 
+<metal:portlet-left metal:fill-slot="column_one_slot"></metal:portlet-left>
+<metal:portlet-right metal:fill-slot="column_two_slot"></metal:portlet-right>
+
 <metal:title fill-slot="content-title">
 
-    <h1 class="documentFirstHeading" i18n:translate="">
-      Most visited pages
+    <h1 class="documentFirstHeading" tal:condition="python:context.portal_type == 'Plone Site'">
+      <span i18n:translate="">Most visited pages</span>
+    </h1>
+    <h1 class="documentFirstHeading" tal:condition="python:context.portal_type != 'Plone Site'">
+      <span i18n:translate="">Most visited pages in</span>:
+      <span>${context/Title}</span>
     </h1>
 
 </metal:title>
 
+<metal:description fill-slot="content-description">
+
+    <div class="documentDescription description" tal:condition="python:context.portal_type != 'Plone Site'">
+      <span i18n:translate="">You are seeing most visited pages in section</span>:<strong> ${view/section_path}</strong>.
+      <span i18n:translate=""> If you want to see the global data visit </span>
+      <a href="${view/portal_url/@@most-visited-analytics-view" i18n:translate="">Most visited pages</a>
+    </div>
+
+</metal:description>
+
 <metal:content-core fill-slot="content-core">
 <metal:block define-macro="content-core">
 
-  <div id="most-visited-pages" tal:define="pages python:view.get_most_visited(number=50)">
+  <div id="most-visited-pages" tal:define="pages python:view.most_visited">
     <div tal:condition="pages">
       <div class="page" tal:repeat="page pages">
         <span> ${python:repeat['page'].index + 1} -</span>

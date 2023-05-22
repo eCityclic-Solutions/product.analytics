@@ -14,9 +14,9 @@ class IAnalyticsSettings(Interface):
     """ Analytics Settings
     """
 
-    ga_id = schema.TextLine(
-        title=_('View ID'),
-        description=_('View ID'),
+    property_id = schema.TextLine(
+        title=_('Property ID'),
+        description=_('Property ID'),
         required=False,
     )
 

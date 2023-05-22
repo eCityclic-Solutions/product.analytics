@@ -14,8 +14,9 @@ class AnalyticsControlPanelEditForm(controlpanel.RegistryEditForm):
     label = _('Analytics Settings')
     description = _(
         'Settings of the analytics. You need to add the following '
-        'service account to your analytics: '
-        'semic-140@decisive-lambda-226112.iam.gserviceaccount.com'  # noqa: C812
+        'service account: '
+        'ecityclic-analytics@analytics-386813.iam.gserviceaccount.com '
+        'to your property with Reader role' # noqa: C812
     )
 
 
