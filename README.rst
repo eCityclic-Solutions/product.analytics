@@ -1,30 +1,14 @@
-.. This README is meant for consumption by humans and pypi. Pypi can render rst files so please do not use Sphinx features.
-   If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
-   This text does not appear on pypi or github. It is a comment.
-
 =================
 product.analytics
 =================
 
-Tell me what your product does
+Google Analytics integration. This product helps you integrate and view your Google Analytics data on v4
 
 Features
 --------
 
-- Can be bullet points
-
-
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
-
-
-Documentation
--------------
-
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+- View to display more visited pages
+- Menu entry showing the number of visits of the current page
 
 
 Translations
@@ -32,13 +16,15 @@ Translations
 
 This product has been translated into
 
-- Klingon (thanks, K'Plai)
+- Catalan
+- Spanish
+- English
 
 
 Installation
 ------------
 
-Install product.analytics by adding it to your buildout::
+Install product.analaytics by adding it to your buildout::
 
     [buildout]
 
@@ -49,22 +35,6 @@ Install product.analytics by adding it to your buildout::
 
 
 and then running ``bin/buildout``
-
-
-Contribute
-----------
-
-- Issue Tracker: https://github.com/collective/product.analytics/issues
-- Source Code: https://github.com/collective/product.analytics
-- Documentation: https://docs.plone.org/foo/bar
-
-
-Support
--------
-
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
-
 
 License
 -------
