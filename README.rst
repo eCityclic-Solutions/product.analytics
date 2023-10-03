@@ -24,6 +24,8 @@ This product has been translated into
 Installation
 ------------
 
+**This product is not published in PyPi, so you need to either configure your buildout to download from GitHub or manual download and place it in your Plone installation**
+
 Install product.analaytics by adding it to your buildout::
 
     [buildout]
