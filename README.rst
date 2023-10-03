@@ -36,6 +36,23 @@ Install product.analaytics by adding it to your buildout::
 
 and then running ``bin/buildout``
 
+Configuration
+------------
+TODO
+
+
+Classifiers
+-----------
+
+Framework
+
+- Plone 5.2
+- Plone 6.0
+
+Programming Language
+
+- Python +3.7
+
 License
 -------
 
